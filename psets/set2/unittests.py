@@ -33,7 +33,7 @@ def update_test(student_updates):
     Returns an array of bools, true if the corresponding weight's gradient is calculated
     correctly
     
-    Use the following x, y, eta, and lambda as inputs into your loss function:
+    Use the following x, y, eta, lambda, and N as inputs into your update function:
     
     x_example = np.array([ 1.        ,  1.51762786, -0.38691813,  0.22823413, -1.05289605,
         1.87082054,  0.61451578,  0.84106924, -0.56034214,  1.05889717,
@@ -41,12 +41,13 @@ def update_test(student_updates):
     y_example = -1.0
     eta_example = 5e-4
     lambda_example = 1e-5 * 5 ** 10
+    N_example = 100  # 100 is the size of the first training set, for example
     w_example = np.array([ 1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9., 10., 11., 12., 13.,
         14.])
     
     The update calculated should equal the loss gradient * eta
     """
-    correct_output_updates = np.array([0.09815625, 0.19607131, 0.29277529, 0.39073912, 0.4877548 ,
-                                        0.58687291, 0.68390101, 0.78167053, 0.87862608, 0.97709195,
-                                        1.07476331, 1.17184588, 1.27060388, 1.36760163])
+    correct_output_updates = np.array([0.00147656, 0.00271194, 0.00273623, 0.00402037, 0.00435636,
+                                       0.00679479, 0.0071432 , 0.00823303, 0.00850889, 0.01029507,
+                                       0.01128674, 0.01168963, 0.01376794, 0.014086  ])
     return np.isclose(student_updates, correct_output_updates, atol=1e-5)
