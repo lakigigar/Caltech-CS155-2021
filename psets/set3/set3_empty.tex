@@ -92,12 +92,11 @@ Compared to a linear classifier, is a decision tree always preferred for classif
 
 \problem[15]
 Consider the following 2D data set:
-\begin{figure}[H]
-    \begin{center}
-    \includegraphics[width=3.3in]{plots/3C.png}
-    \end{center}
-    \end{figure}
-
+% \begin{figure}[H]
+%     \begin{center}
+%     \includegraphics[width=3.3in]{plots/3C.png}
+%     \end{center}
+% \end{figure}
 \subproblem[5] Suppose we train a decision tree on this dataset using top-down greedy induction, with the Gini index as
 the impurity measure. We define our stopping condition to be if no split of a node
 results in any reduction in impurity. Submit a drawing of the resulting tree.  What is its classification error ((number of misclassified points) / (number of total points))?
@@ -139,9 +138,8 @@ Choose one of the following options:
 \textbf{ii.} Train a decision tree classifier using Gini as the impurity measure and maximal tree depth as early stopping criterion. Try different tree depths from 2 to 20 in increments of 1. Then, on a single plot, plot both training and test classification error versus tree depth. To do this, fill in the \texttt{eval_tree_based_model_max_depth} function in the code template for this problem.
 
 \problem[3]
-For either the minimal leaf node size and maximum depth parameters tested in the last question, which parameter value minimizes the test error? What effects does early stopping have on the performance of a decision tree model?
-Please justify your answer based on the two plots you derived.
-=
+For either the minimal leaf node size or maximum depth parameters tested in the last question, which parameter value minimizes the test error? What effects does early stopping have on the performance of a decision tree model?
+Please justify your answer based on the plot you derived from the previous problem.
 
 \problem[2] % indent for consistency
 Choose one of the following options: 
@@ -181,7 +179,7 @@ bound on the loss term at each iteration.
 
 \problem[3 EC]
 Let $h_t: \mathbb{R}^m \rightarrow \{-1,1\}$ be the weak classifier obtained at step $t$, and let $\alpha_t$ be
-its weight. Recall that the final classifier is $$H(x) = \text{sign}(f(x)) = \text{sign} \left(\sum\limits_{i=1}^T \alpha_{t}h_t(x) \right).$$
+its weight. Recall that the final classifier is $$H(x) = \text{sign}(f(x)) = \text{sign} \left(\sum\limits_{t=1}^T \alpha_{t}h_t(x) \right).$$
 
 Suppose $\{(x_1, y_1), ..., (x_N, y_N)\} \subset \mathbb{R}^m \times \{-1,1\}$ is our training dataset.  Show that the training set error of the final classifier can be bounded from
 above if an an exponential loss function is used:
