@@ -1,4 +1,5 @@
 import numpy as np
+import requests
 
 ##########################
 # Helper functions/classes
@@ -41,20 +42,20 @@ def get_similarity(v1, v2):
     return np.dot(v1_unit, v2_unit)
 
 
-def load_word_list(path):
+def load_word_list(url):
     """
-    Loads a list of the words from the file at path <path>, removing all
+    Loads a list of the words from the url, removing all
     non-alpha-numeric characters from the file.
     """
-    with open(path) as handle:
-        # Load a list of whitespace-delimited words from the specified file
-        raw_text = handle.read().strip().split()
-        # Strip non-alphanumeric characters from each word
-        alphanumeric_words = map(lambda word: ''.join(char for char in word if char.isalnum()), raw_text)
-        # Filter out words that are now empty (e.g. strings that only contained non-alphanumeric chars)
-        alphanumeric_words = filter(lambda word: len(word) > 0, alphanumeric_words)
-        # Convert each word to lowercase and return the result
-        return list(map(lambda word: word.lower(), alphanumeric_words))
+	req = requests.get(url)
+    # Load a list of whitespace-delimited words from the specified file
+    raw_text = req.text
+    # Strip non-alphanumeric characters from each word
+    alphanumeric_words = map(lambda word: ''.join(char for char in word if char.isalnum()), raw_text)
+    # Filter out words that are now empty (e.g. strings that only contained non-alphanumeric chars)
+    alphanumeric_words = filter(lambda word: len(word) > 0, alphanumeric_words)
+    # Convert each word to lowercase and return the result
+    return list(map(lambda word: word.lower(), alphanumeric_words))
 
 def generate_onehot_dict(word_list):
     """
