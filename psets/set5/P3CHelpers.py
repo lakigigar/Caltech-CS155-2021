@@ -48,13 +48,18 @@ def load_word_list(url):
     non-alpha-numeric characters from the file.
     """
 	req = requests.get(url, verify=False)
+	file = open(“filename.txt”, “w”)
+	file.write(req.text)
+
     # Load a list of whitespace-delimited words from the specified file
-    raw_text = req.text
+    raw_text = file.read().strip().split()
     # Strip non-alphanumeric characters from each word
     alphanumeric_words = map(lambda word: ''.join(char for char in word if char.isalnum()), raw_text)
     # Filter out words that are now empty (e.g. strings that only contained non-alphanumeric chars)
     alphanumeric_words = filter(lambda word: len(word) > 0, alphanumeric_words)
     # Convert each word to lowercase and return the result
+
+ 	file.close()
     return list(map(lambda word: word.lower(), alphanumeric_words))
 
 def generate_onehot_dict(word_list):
