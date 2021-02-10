@@ -47,7 +47,7 @@ def load_word_list(url):
     Loads a list of the words from the url, removing all
     non-alpha-numeric characters from the file.
     """
-	req = requests.get(url, verify=false)
+	req = requests.get(url, verify=False)
     # Load a list of whitespace-delimited words from the specified file
     raw_text = req.text
     # Strip non-alphanumeric characters from each word
