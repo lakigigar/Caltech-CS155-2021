@@ -1,6 +1,6 @@
 \newif\ifshowsolutions
 \showsolutionstrue
-\input{../preamble}
+\input{..\preamble}
 
 
 
@@ -230,7 +230,7 @@ When the number of words in the vocabulary $W$ is large, computing the regular s
 
 When the words have all the same frequency, then any balanced binary tree will minimize the average representation length and maximize computational efficiency of the hierarchical softmax. But in practice, words occur with very different frequencies --- words like "a", "the", and "in" will occur many more times than words like "representation" or "normalization".
 
-The original paper (Mikolov et al. 2013) uses a Huffman tree instead of a balanced binary tree to leverage this fact. For the 8 words and their frequencies listed in the table below, build a Huffman tree using the algorithm found \href{https://www.siggraph.org/education/materials/HyperGraph/video/mpeg/mpegfaq/huffman_tutorial.html}{here}.
+The original paper (Mikolov et al. 2013) uses a Huffman tree instead of a balanced binary tree to leverage this fact. For the 8 words and their frequencies listed in the table below, build a Huffman tree using the algorithm found \href{https://education.siggraph.org/static/HyperGraph/video/mpeg/mpegfaq/huffman_tutorial.html}{here}.
 Then, build a balanced binary tree of depth 3 to store these words.
 Make sure that each word is stored as a \emph{leaf node} in the trees.
 
