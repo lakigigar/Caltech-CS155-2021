@@ -1,0 +1,81 @@
+\newif\ifshowsolutions
+\showsolutionstrue
+\input{preamble}
+\newcommand{\boldline}[1]{\underline{\textbf{#1}}}
+
+
+\chead{%
+  {\vbox{%
+      \vspace{2mm}
+      \large
+      Machine Learning \& Data Mining \hfill
+      Caltech CS/CNS/EE 155 \hfill \\[1pt]
+      Miniproject 3\hfill
+      Released March $3^{rd}$, 2021 \\
+    }
+  }
+}
+
+\begin{document}
+\pagestyle{fancy}
+
+% LaTeX is simple if you have a good template to work with! To use this document, simply fill in your text where we have indicated. To write mathematical notation in a fancy style, just write the notation inside enclosing $dollar signs$.
+
+% For example:
+% $y = x^2 + 2x + 1$
+
+% For help with LaTeX, please feel free to see a TA!
+
+
+
+\section{Introduction}
+\medskip
+\begin{itemize}
+
+    \item \boldline{Group members} \\
+    % Insert text here.
+
+    \item \boldline{Team name} \\
+    % Insert text here.
+
+    \item \boldline{Division of labour} \\
+    % Insert text here.
+
+\end{itemize}
+
+
+
+\section{Pre-Processing}
+\medskip
+% Explain your data pre-processing choices, as well as why you chose these choices initially. What was your final pre-processing? How did you tokenize your words, and split up the data into separate sequences? What changed as you continued on your project? What did you try that didn't work? Also write about any analysis you did on the dataset to help you make these decisions.
+
+\section{Unsupervised Learning}
+\medskip
+% This section should highlight your HMM. What packages did you use, if any? How did you choose the number of hidden states?
+
+
+
+\section{Poetry Generation, Part 1: Hidden Markov Models}
+\medskip
+% Describe your algorithm for generating the 14-line sonnet. As an example, include at least one sonnet generated from your unsupervised trained HMM. You should comment on the quality of geneating poems in this naive manner. How accurate is the rhyme, rythym, and syllable count, compared to what a sonnet should be? Do your poems make any sense? Do they retain Shakespeare's original voice? How does training with different numbers of hidden states affect the poems generated (in a qualitative manner)? For the good qualities that you describe, also discuss how you think the HMM was able to capture these qualities.
+
+
+\section{Poetry Generation, Part 2: Recurrent Neural Networks}
+\medskip
+
+% Explain in detail what model you implemented and using what packages. What parameters did you tune? Comment on the poems that your model produced. Does the LSTM successfully learn sentence structure and/or sonnet structure? How does an LSTM compare in poem quality to the HMM? How does it compare in runtime/amount of training data needed to the HMM? Include generated poems using temperatures of 1.5, 0.75, and 0.25 with the following initial 40-character seed: ``shall i compare thee to a summer’s day\n'', and comment on their differences.
+
+
+\section{Additional Goals}
+\medskip
+
+% Explore methods of improving your poems or extending them. You do not need to attempt all of the tasks listed in the assignment for full marks on this section. If you have ideas for other improvements to the poetry generation not listed here, feel free to talk to a TA and work on it. The sky is the limit.
+
+% Alongside examples of poems generated, talk about the extra improvements you made to your poem generation algorithm. What problems were you trying to fix? How did you go about attempting to fix them? Why did you think that what you tried would work? Did your method succeed in making the sonnet more like a sonnet? If not, why do you think what you tried didn't work? What tradeoffs do you see in quality and creativity when you make these changes?
+
+\section{Visualization and Interpretation}
+\medskip
+
+% Explain your interpretation of how a Hidden Markov Model learns patterns in Shakespeare's texts. You should briefly elaborate on the methods you used to analyze the model. In addition, for at least 5 hidden states give a list of the top 10 words that associate with this hidden state and state any common features among these groups. Furthermore, try to interpret and visualize the learned transitions between states. A possible suggestion is to draw a transition diagram of your Markov model and give descriptive names to the states. Feel free to be creative with your visualizations, but remember that accurately representing data is still your primary objective. Your figures, tables, and diagrams should contribute to a discussion about your model.
+
+\end{document}

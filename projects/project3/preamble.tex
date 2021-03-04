@@ -1,0 +1,83 @@
+\documentclass{article}
+\usepackage{listings}
+\usepackage{amsmath}
+%\usepackage{subfigure}
+\usepackage{subfig}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{mdwlist}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage{geometry}
+\usepackage{titlesec}
+\geometry{margin=1in}
+\geometry{headheight=2in}
+\geometry{top=2in}
+\usepackage{palatino}
+\usepackage{mathrsfs}
+\usepackage{fancyhdr}
+\usepackage{paralist}
+\usepackage{todonotes}
+\setlength{\marginparwidth}{2.15cm}
+\usepackage{tikz}
+\usetikzlibrary{positioning,shapes,backgrounds}
+\usepackage{float} % Place figures where you ACTUALLY want it
+\usepackage{comment} % a hack to toggle sections
+\usepackage{ifthen}
+\usepackage{mdframed}
+\usepackage{verbatim}
+\usepackage[strings]{underscore}
+\usepackage{listings}
+\usepackage{bbm}
+\rhead{}
+\lhead{}
+
+\renewcommand{\baselinestretch}{1.15}
+
+% Shortcuts for commonly used operators
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\Bias}{\operatorname{Bias}}
+\DeclareMathOperator{\argmin}{arg\,min}
+\DeclareMathOperator{\argmax}{arg\,max}
+
+% do not number subsection and below
+\setcounter{secnumdepth}{1}
+
+% custom format subsection
+\titleformat*{\subsection}{\large\bfseries}
+
+% set up the \question shortcut
+\newcounter{question}[section]
+\newenvironment{question}[1][]
+  {\refstepcounter{question}\par\addvspace{1em}\textbf{Question~\Alph{question}\!
+    \ifthenelse{\equal{#1}{}}{}{ [#1 points]}: }}
+    {\par\vspace{\baselineskip}}
+
+\newcounter{subquestion}[question]
+\newenvironment{subquestion}[1][]
+  {\refstepcounter{subquestion}\par\medskip\textbf{\roman{subquestion}.\!
+    \ifthenelse{\equal{#1}{}}{}{ [#1 points]:}} }
+  {\par\addvspace{\baselineskip}}
+
+\titlespacing\section{0pt}{12pt plus 2pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+
+
+\newenvironment{hint}[1][]
+  {\begin{em}\textbf{Hint: }}{\end{em}}
+
+\ifshowsolutions
+  \newenvironment{solution}[1][]
+    {\par\medskip \begin{mdframed}\textbf{Solution~\Alph{question}#1:} \begin{em}}
+    {\end{em}\medskip\end{mdframed}\medskip}
+  \newenvironment{subsolution}[1][]
+    {\par\medskip \begin{mdframed}\textbf{Solution~\Alph{question}#1.\roman{subquestion}:} \begin{em}}
+    {\end{em}\medskip\end{mdframed}\medskip}
+\else
+  \excludecomment{solution}
+  \excludecomment{subsolution}
+\fi
